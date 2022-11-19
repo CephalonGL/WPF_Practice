@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Events
 {
     internal static class Program
@@ -8,10 +10,29 @@ namespace Events
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+
+            Contact contact = new();
+
+            EventForm firstForm = new();
+            firstForm.Contact = contact;
+            firstForm.Text = "FirstForm";
+            firstForm.Show();
+            firstForm.Location = new Point(200, 200);
+
+            EventForm secondForm = new();
+            secondForm.Contact = contact;
+            secondForm.Text = "SecondForm";
+            secondForm.Show();
+            secondForm.Location = new Point(550, 200);
+
+            EventForm thirdForm = new();
+            thirdForm.Contact = contact;
+            thirdForm.Text = "ThirdForm";
+            thirdForm.Show();
+            thirdForm.Location = new Point(900, 200);
+
+            Application.Run(firstForm);
         }
     }
 }
