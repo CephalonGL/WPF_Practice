@@ -10,6 +10,7 @@ namespace Events;
 /// </summary>
 public class Contact
 {   
+	// TODO: По заданию нужно использовать встроенный EventHandler.
     /// <summary>
     /// Delegate for events.
     /// </summary>
@@ -17,6 +18,7 @@ public class Contact
     /// <param name="eventArgs">Event arguments.</param>
     public delegate void ContactEventHandler(object sender, EventArgs eventArgs);
 
+    // TODO: События должны идти после свойств.
     /// <summary>
     /// Invoke case full name changes.
     /// </summary>
@@ -58,6 +60,7 @@ public class Contact
             if (_fullName != value)
             {
                 _fullName = value;
+                // TODO: проверка события на null. 
                 FullNameChanged.Invoke(value, EventArgs.Empty);
             }
         }
@@ -73,7 +76,8 @@ public class Contact
             if (_phoneNumber != value)
             {
                 _phoneNumber = value;
-                PhoneNumberChanged.Invoke(value, EventArgs.Empty);
+                // TODO: проверка события на null. 
+				PhoneNumberChanged.Invoke(value, EventArgs.Empty);
             }
         }
     }
@@ -88,7 +92,8 @@ public class Contact
             if (_address != value)
             {
                 _address = value;
-                AddressChanged.Invoke(value, EventArgs.Empty);
+                // TODO: проверка события на null. 
+				AddressChanged.Invoke(value, EventArgs.Empty);
             }
         }
     }

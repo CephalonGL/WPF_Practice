@@ -49,6 +49,7 @@ public partial class EventForm : Form
         InitializeComponent();
     }
     
+    // TODO: RSDN
     private void closeButton_Click(object sender, EventArgs e)
     {
         Contact.FullNameChanged -= ContactFullNameChanged;
@@ -59,27 +60,33 @@ public partial class EventForm : Form
 
     private void EventForm_Load(object sender, EventArgs e)
     {
-        Contact.FullNameChanged += ContactFullNameChanged;
+		// TODO: перенести подписку событий в сеттер свойства.
+		// Также учесть, что если прошлое значение свойства не равно null,
+		// то отписать прошлое значение от событий.
+		Contact.FullNameChanged += ContactFullNameChanged;
         Contact.PhoneNumberChanged += ContactPhoneNumberChanged;
         Contact.AddressChanged += ContactAddressChanged;
     }
 
-    private void fullnameTextBox_TextChanged(object sender, EventArgs e)
+    // TODO: RSDN
+	private void fullnameTextBox_TextChanged(object sender, EventArgs e)
     {
         Contact.FullName = fullnameTextBox.Text;
     }
 
-    private void phoneNumberTextBox_TextChanged(object sender, EventArgs e)
+	// TODO: RSDN
+	private void phoneNumberTextBox_TextChanged(object sender, EventArgs e)
     {
         Contact.PhoneNumber = phoneNumberTextBox.Text;
     }
 
-    private void addressTextBox_TextChanged(object sender, EventArgs e)
+	// TODO: RSDN
+	private void addressTextBox_TextChanged(object sender, EventArgs e)
     {
         Contact.Address = addressTextBox.Text;
     }
-
-    private void EventForm_FormClosed(object sender, FormClosedEventArgs e)
+    
+	private void EventForm_FormClosed(object sender, FormClosedEventArgs e)
     {
         Contact.FullNameChanged -= ContactFullNameChanged;
         Contact.PhoneNumberChanged -= ContactPhoneNumberChanged;
