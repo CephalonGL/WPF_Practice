@@ -21,7 +21,7 @@ public partial class EventForm : Form
     /// <param name="e">Event argument.</param>
     private void ContactFullNameChanged(object sender, EventArgs e)
     {
-        fullnameTextBox.Text = Contact.FullName;
+        fullNameTextBox.Text = Contact.FullName;
     }
 
     /// <summary>
@@ -49,8 +49,8 @@ public partial class EventForm : Form
         InitializeComponent();
     }
     
-    // TODO: RSDN
-    private void closeButton_Click(object sender, EventArgs e)
+    // TODO: RSDN+
+    private void CloseButton_Click(object sender, EventArgs e)
     {
         Contact.FullNameChanged -= ContactFullNameChanged;
         Contact.PhoneNumberChanged -= ContactPhoneNumberChanged;
@@ -68,20 +68,20 @@ public partial class EventForm : Form
         Contact.AddressChanged += ContactAddressChanged;
     }
 
-    // TODO: RSDN
-	private void fullnameTextBox_TextChanged(object sender, EventArgs e)
+    // TODO: RSDN+
+	private void FullnameTextBox_TextChanged(object sender, EventArgs e)
     {
-        Contact.FullName = fullnameTextBox.Text;
+        Contact.FullName = fullNameTextBox.Text;
     }
 
-	// TODO: RSDN
-	private void phoneNumberTextBox_TextChanged(object sender, EventArgs e)
+	// TODO: RSDN+
+	private void PhoneNumberTextBox_TextChanged(object sender, EventArgs e)
     {
         Contact.PhoneNumber = phoneNumberTextBox.Text;
     }
 
-	// TODO: RSDN
-	private void addressTextBox_TextChanged(object sender, EventArgs e)
+	// TODO: RSDN+
+	private void AddressTextBox_TextChanged(object sender, EventArgs e)
     {
         Contact.Address = addressTextBox.Text;
     }

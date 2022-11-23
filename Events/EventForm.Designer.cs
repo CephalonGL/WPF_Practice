@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.fullNameLabel = new System.Windows.Forms.Label();
-            this.fullnameTextBox = new System.Windows.Forms.TextBox();
+            this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.closeButton = new System.Windows.Forms.Button();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
@@ -48,11 +48,11 @@
             // 
             // fullnameTextBox
             // 
-            this.fullnameTextBox.Location = new System.Drawing.Point(12, 37);
-            this.fullnameTextBox.Name = "fullnameTextBox";
-            this.fullnameTextBox.Size = new System.Drawing.Size(290, 31);
-            this.fullnameTextBox.TabIndex = 1;
-            this.fullnameTextBox.TextChanged += new System.EventHandler(this.fullnameTextBox_TextChanged);
+            this.fullNameTextBox.Location = new System.Drawing.Point(12, 37);
+            this.fullNameTextBox.Name = "fullNameTextBox";
+            this.fullNameTextBox.Size = new System.Drawing.Size(290, 31);
+            this.fullNameTextBox.TabIndex = 1;
+            this.fullNameTextBox.TextChanged += new System.EventHandler(this.FullnameTextBox_TextChanged);
             // 
             // closeButton
             // 
@@ -62,7 +62,7 @@
             this.closeButton.TabIndex = 2;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // phoneNumberTextBox
             // 
@@ -70,7 +70,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(290, 31);
             this.phoneNumberTextBox.TabIndex = 4;
-            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged);
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.PhoneNumberTextBox_TextChanged);
             // 
             // phoneNumberLabel
             // 
@@ -87,7 +87,7 @@
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(290, 31);
             this.addressTextBox.TabIndex = 6;
-            this.addressTextBox.TextChanged += new System.EventHandler(this.addressTextBox_TextChanged);
+            this.addressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // addressLabel
             // 
@@ -108,7 +108,7 @@
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.closeButton);
-            this.Controls.Add(this.fullnameTextBox);
+            this.Controls.Add(this.fullNameTextBox);
             this.Controls.Add(this.fullNameLabel);
             this.Name = "EventForm";
             this.Text = "Form1";
@@ -122,7 +122,7 @@
         #endregion
 
         private Label fullNameLabel;
-        private TextBox fullnameTextBox;
+        private TextBox fullNameTextBox;
         private Button closeButton;
         private TextBox phoneNumberTextBox;
         private Label phoneNumberLabel;

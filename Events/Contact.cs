@@ -10,29 +10,13 @@ namespace Events;
 /// </summary>
 public class Contact
 {   
-	// TODO: По заданию нужно использовать встроенный EventHandler.
-    /// <summary>
-    /// Delegate for events.
-    /// </summary>
-    /// <param name="sender">Event sender.</param>
-    /// <param name="eventArgs">Event arguments.</param>
-    public delegate void ContactEventHandler(object sender, EventArgs eventArgs);
-
-    // TODO: События должны идти после свойств.
-    /// <summary>
-    /// Invoke case full name changes.
-    /// </summary>
-    public event ContactEventHandler FullNameChanged;
-
-    /// <summary>
-    /// Invoke case phone number changes.
-    /// </summary>
-    public event ContactEventHandler PhoneNumberChanged;
-
-    /// <summary>
-    /// Invoke case address changes.
-    /// </summary>
-    public event ContactEventHandler AddressChanged;
+	// TODO: По заданию нужно использовать встроенный EventHandler.+
+    ///// <summary>
+    ///// Delegate for events.
+    ///// </summary>
+    ///// <param name="sender">Event sender.</param>
+    ///// <param name="eventArgs">Event arguments.</param>
+    //public delegate void ContactEventHandler(object sender, EventArgs eventArgs);
 
     /// <summary>
     /// Stores full name.
@@ -60,8 +44,8 @@ public class Contact
             if (_fullName != value)
             {
                 _fullName = value;
-                // TODO: проверка события на null. 
-                FullNameChanged.Invoke(value, EventArgs.Empty);
+                // TODO: проверка события на null. +
+                FullNameChanged?.Invoke(value, EventArgs.Empty);
             }
         }
     }
@@ -76,8 +60,8 @@ public class Contact
             if (_phoneNumber != value)
             {
                 _phoneNumber = value;
-                // TODO: проверка события на null. 
-				PhoneNumberChanged.Invoke(value, EventArgs.Empty);
+                // TODO: проверка события на null. +
+				PhoneNumberChanged?.Invoke(value, EventArgs.Empty);
             }
         }
     }
@@ -92,9 +76,25 @@ public class Contact
             if (_address != value)
             {
                 _address = value;
-                // TODO: проверка события на null. 
-				AddressChanged.Invoke(value, EventArgs.Empty);
+                // TODO: проверка события на null. +
+				AddressChanged?.Invoke(value, EventArgs.Empty);
             }
         }
     }
+
+    // TODO: События должны идти после свойств.+
+    /// <summary>
+    /// Invoke case full name changes.
+    /// </summary>
+    public event EventHandler FullNameChanged;
+
+    /// <summary>
+    /// Invoke case phone number changes.
+    /// </summary>
+    public event EventHandler PhoneNumberChanged;
+
+    /// <summary>
+    /// Invoke case address changes.
+    /// </summary>
+    public event EventHandler AddressChanged;
 }
