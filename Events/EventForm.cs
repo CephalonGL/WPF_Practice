@@ -5,13 +5,31 @@ namespace Events;
 /// </summary>
 public partial class EventForm : Form
 {
+
+    private Contact _contact;
+
     /// <summary>
     /// Stores contact.
     /// </summary>
     public Contact Contact 
     {
-        get;
-        set;
+        get => _contact;
+        set
+        {
+            if (_contact is not null)
+            {
+                _contact.FullNameChanged -= ContactFullNameChanged;
+                _contact.PhoneNumberChanged -= ContactPhoneNumberChanged;
+                _contact.AddressChanged -= ContactAddressChanged;
+            }
+            _contact = value;
+            if (_contact is not null)
+            {
+                _contact.FullNameChanged += ContactFullNameChanged;
+                _contact.PhoneNumberChanged += ContactPhoneNumberChanged;
+                _contact.AddressChanged += ContactAddressChanged;   
+            }
+        }
     }
 
     /// <summary>
@@ -60,12 +78,9 @@ public partial class EventForm : Form
 
     private void EventForm_Load(object sender, EventArgs e)
     {
-		// TODO: перенести подписку событий в сеттер свойства.
+		// TODO: перенести подписку событий в сеттер свойства. +
 		// Также учесть, что если прошлое значение свойства не равно null,
 		// то отписать прошлое значение от событий.
-		Contact.FullNameChanged += ContactFullNameChanged;
-        Contact.PhoneNumberChanged += ContactPhoneNumberChanged;
-        Contact.AddressChanged += ContactAddressChanged;
     }
 
     // TODO: RSDN+
