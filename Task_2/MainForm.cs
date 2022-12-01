@@ -1,4 +1,6 @@
-namespace Task_2
+using Task_2_WPF_View;
+
+namespace Task_2_WPF
 {
     public partial class MainForm : Form
     {
@@ -9,7 +11,7 @@ namespace Task_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            mainListView.Items.Add(new ListViewItem());
         }
     }
 }

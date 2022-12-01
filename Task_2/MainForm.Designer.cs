@@ -1,4 +1,4 @@
-﻿namespace Task_2
+﻿namespace Task_2_WPF
 {
     partial class MainForm
     {
@@ -28,14 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // Form1
+            // mainListView
+            // 
+            this.mainListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainListView.Location = new System.Drawing.Point(12, 12);
+            this.mainListView.Name = "mainListView";
+            this.mainListView.Size = new System.Drawing.Size(557, 805);
+            this.mainListView.TabIndex = 0;
+            this.mainListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(581, 829);
+            this.Controls.Add(this.mainListView);
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -43,5 +56,7 @@
         }
 
         #endregion
+
+        private ListView mainListView;
     }
 }

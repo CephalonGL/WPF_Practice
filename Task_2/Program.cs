@@ -1,4 +1,4 @@
-namespace Task_2
+namespace Task_2_WPF
 {
     internal static class Program
     {
@@ -8,8 +8,6 @@ namespace Task_2
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
         }
