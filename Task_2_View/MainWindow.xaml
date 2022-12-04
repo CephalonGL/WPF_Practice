@@ -4,13 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task_2_View"
+        xmlns:viewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="300">
+        Title="MainWindow" Height="400" Width="500">
+    <Window.DataContext>
+        <viewModel:ViewModel/>
+    </Window.DataContext>
     <Grid>
-        <ListView x:Name="customButtonListView">
-            <local:customButton Name="customButton">
-
-            </local:customButton>
+        <ListView x:Name="customButtonListView" 
+                  ItemsSource="{Binding Files}"
+                  SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:CustomButton FileName="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="addFileButton"
+                Command="{Binding AddItemCommand}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom">
+            <Image Source="resources\icon-add.png" Height="16" Width="16"></Image>
+        </Button>
     </Grid>
 </Window>

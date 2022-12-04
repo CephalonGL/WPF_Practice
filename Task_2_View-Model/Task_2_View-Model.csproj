@@ -11,4 +11,8 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0-preview1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Task_2_Model\Task_2_Model.csproj" />
+  </ItemGroup>
+
 </Project>

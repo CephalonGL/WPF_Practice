@@ -12,18 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CommunityToolkit.Mvvm;
+using Microsoft.Win32;
+using Task_2_Model;
+using Task_2_View_Model;
 
-namespace Task_2_View
+namespace Task_2_View;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+    ViewModel mainViewModel = new();
 
+    public MainWindow()
+    {
+        InitializeComponent();
     }
 }

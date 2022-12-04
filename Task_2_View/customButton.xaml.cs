@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,17 +14,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CommunityToolkit.Mvvm;
 
-namespace Task_2_View
+namespace Task_2_View;
+
+/// <summary>
+/// Interaction logic for customButton.xaml
+/// </summary>
+public partial class CustomButton : UserControl
 {
-    /// <summary>
-    /// Interaction logic for customButton.xaml
-    /// </summary>
-    public partial class customButton : UserControl
+    private string _fileName = "Empty name";
+
+    public string FileName
     {
-        public customButton()
-        {
-            InitializeComponent();
-        }
+        get => _fileName;
+        set => _fileName = value;
+    }
+    public CustomButton()
+    {
+        InitializeComponent();
+        fileNameLabel.Content = FileName;
+    }
+
+    public CustomButton(string fileName)
+    {
+        InitializeComponent();
+        FileName = fileName;
+        fileNameLabel.Content = FileName;
     }
 }
