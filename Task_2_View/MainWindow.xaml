@@ -16,7 +16,7 @@
                   SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <local:CustomButton FileName="{Binding Name}"/>
+                    <local:CustomButton x:Name="CustomButton" FileName="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

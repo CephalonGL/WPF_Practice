@@ -23,19 +23,33 @@ namespace Task_2_View;
 /// </summary>
 public partial class CustomButton : UserControl
 {
+    /// <summary>
+    /// Store file name.
+    /// </summary>
     private string _fileName = "Empty name";
 
+    /// <summary>
+    /// Store file name.
+    /// </summary>
     public string FileName
     {
         get => _fileName;
         set => _fileName = value;
     }
+
+    /// <summary>
+    /// Create CustomButton item.
+    /// </summary>
     public CustomButton()
     {
         InitializeComponent();
         fileNameLabel.Content = FileName;
     }
 
+    /// <summary>
+    /// Create CustomButton item.
+    /// </summary>
+    /// <param name="fileName">File name.</param>
     public CustomButton(string fileName)
     {
         InitializeComponent();

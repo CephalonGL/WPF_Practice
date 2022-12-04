@@ -24,8 +24,15 @@ namespace Task_2_View;
 /// </summary>
 public partial class MainWindow : Window
 {
+
+    /// <summary>
+    /// Stores view-model item.
+    /// </summary>
     ViewModel mainViewModel = new();
 
+    /// <summary>
+    /// Run program.
+    /// </summary>
     public MainWindow()
     {
         InitializeComponent();

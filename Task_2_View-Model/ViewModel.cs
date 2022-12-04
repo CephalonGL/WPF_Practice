@@ -12,47 +12,72 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.Win32;
 using Task_2_Model;
 
-namespace Task_2_View_Model
+namespace Task_2_View_Model;
+
+/// <summary>
+/// Main view-model
+/// </summary>
+public class ViewModel
 {
-    public class ViewModel
+    /// <summary>
+    /// Creates ViewModel item.
+    /// </summary>
+    public ViewModel()
     {
-        public ViewModel()
-        {
-            Files = new();
-            AddItemCommand = new CustomCommand(AddItem);
-            RemoveItemCommand = new CustomCommand(RemoveItem);
-        }
+        Files = new();
+        AddItemCommand = new CustomCommand(AddItem);
+        RemoveItemCommand = new CustomCommand(RemoveItem);
+    }
 
+    /// <summary>
+    /// Store all files.
+    /// </summary>
+    private ObservableCollection<File> _files;
 
-        private ObservableCollection<File> _files;
+    /// <summary>
+    /// Store all files.
+    /// </summary>
+    public ObservableCollection<File> Files
+    {
+        get => _files;
+        set => _files = value;
+    }
 
-        public ObservableCollection<File> Files
-        {
-            get => _files;
-            set => _files = value;
-        }
+    /// <summary>
+    /// Add new file to collection.
+    /// </summary>
+    /// <param name="obj">object</param>
+    public void AddItem(object obj)
+    {
+        OpenFileDialog fileDialog = new();
+        fileDialog.ShowDialog();
+        Files.Add(new File(fileDialog?.FileName));
+    }
 
-        public void AddItem(object obj)
-        {
-            OpenFileDialog fileDialog = new();
-            fileDialog.ShowDialog();
-            Files.Add(new File(fileDialog?.FileName));
-        }
-        private void RemoveItem(object obj)
-        {
+    /// <summary>
+    /// Delete file from collection.
+    /// </summary>
+    /// <param name="obj"></param>
+    private void RemoveItem(object obj)
+    {
 
-        }
-        
-        public ICommand AddItemCommand
-        {
-            get;
-            private set;
-        }
+    }
 
-        public ICommand RemoveItemCommand
-        {
-            get;
-            private set;
-        }
+    /// <summary>
+    /// Store link to AddItem method.
+    /// </summary>
+    public ICommand AddItemCommand
+    {
+        get;
+        private set;
+    }
+
+    /// <summary>
+    /// Store link to RemoveItem method.
+    /// </summary>
+    public ICommand RemoveItemCommand
+    {
+        get;
+        private set;
     }
 }
