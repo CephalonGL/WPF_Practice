@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <ListView Grid.Row="0"
+                  x:Name="leftListView"></ListView>
+        <ListView Grid.Row="1"
+                  x:Name="RightListView"></ListView>
     </Grid>
 </Window>
