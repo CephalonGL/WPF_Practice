@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Task_2_View"
              mc:Ignorable="d" Height="30" Width="Auto">
     <UserControl.DataContext>
-        <viewModel:ViewModel/>
+        <viewModel:MainViewModel/>
     </UserControl.DataContext>
     <Grid Background="White">
         <Label x:Name ="fileNameLabel" 

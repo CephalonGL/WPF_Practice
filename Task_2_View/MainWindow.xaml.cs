@@ -27,7 +27,7 @@ public partial class MainWindow : Window
     /// <summary>
     /// Stores view-model item.
     /// </summary>
-    ViewModel mainViewModel = new();
+    MainViewModel _mainMainViewModel = new();
 
     /// <summary>
     /// Run program.
