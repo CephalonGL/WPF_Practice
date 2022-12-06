@@ -12,20 +12,32 @@ namespace Task_2_View_Model;
 /// </summary>
 internal class CustomCommand : ICommand
 {
+    /// <summary>
+    /// Executable action.
+    /// </summary>
+    private Action<object> ExecuteAction
+    {
+        get;
+        set;
+    }
+    
+    /// <summary>
+    /// Change executable statement.
+    /// </summary>
+    public event EventHandler? CanExecuteChanged
+    {
+        add => CommandManager.RequerySuggested += value;
+        remove => CommandManager.RequerySuggested -= value;
+    }
 
     /// <summary>
     /// Create custom command item.
     /// </summary>
-    /// <param name="executeAction"></param>
-    public CustomCommand(Action<object> executeAction)
+    /// <param name="executeActionAction"></param>
+    public CustomCommand(Action<object> executeActionAction)
     {
-        _execute = executeAction;
+        ExecuteAction = executeActionAction;
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    private Action<object> _execute;
 
     /// <summary>
     /// Return true if command can be executed and false otherwise.
@@ -43,18 +55,9 @@ internal class CustomCommand : ICommand
     /// <param name="parameter">Command to execute.</param>
     public void Execute(object? parameter)
     {
-        if (_execute is not null)
+        if (ExecuteAction is not null)
         {
-            _execute(parameter);
+            ExecuteAction(parameter);
         }
-    }
-
-    /// <summary>
-    /// Change executable statement.
-    /// </summary>
-    public event EventHandler? CanExecuteChanged
-    {
-        add => CommandManager.RequerySuggested += value;
-        remove => CommandManager.RequerySuggested -= value;
     }
 }

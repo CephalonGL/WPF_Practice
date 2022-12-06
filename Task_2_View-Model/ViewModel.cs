@@ -20,6 +20,38 @@ namespace Task_2_View_Model;
 public class ViewModel
 {
     /// <summary>
+    /// Store all files.
+    /// </summary>
+    public ObservableCollection<File> Files
+    {
+        get => _files;
+        set => _files = value;
+    }
+
+    /// <summary>
+    /// Store link to AddItem method.
+    /// </summary>
+    public ICommand AddItemCommand
+    {
+        get;
+        private set;
+    }
+
+    /// <summary>
+    /// Store link to RemoveItem method.
+    /// </summary>
+    public ICommand RemoveItemCommand
+    {
+        get;
+        private set;
+    }
+    
+    /// <summary>
+    /// Store all files.
+    /// </summary>
+    private ObservableCollection<File> _files;
+
+    /// <summary>
     /// Creates ViewModel item.
     /// </summary>
     public ViewModel()
@@ -27,20 +59,6 @@ public class ViewModel
         Files = new();
         AddItemCommand = new CustomCommand(AddItem);
         RemoveItemCommand = new CustomCommand(RemoveItem);
-    }
-
-    /// <summary>
-    /// Store all files.
-    /// </summary>
-    private ObservableCollection<File> _files;
-
-    /// <summary>
-    /// Store all files.
-    /// </summary>
-    public ObservableCollection<File> Files
-    {
-        get => _files;
-        set => _files = value;
     }
 
     /// <summary>
@@ -61,23 +79,5 @@ public class ViewModel
     private void RemoveItem(object obj)
     {
 
-    }
-
-    /// <summary>
-    /// Store link to AddItem method.
-    /// </summary>
-    public ICommand AddItemCommand
-    {
-        get;
-        private set;
-    }
-
-    /// <summary>
-    /// Store link to RemoveItem method.
-    /// </summary>
-    public ICommand RemoveItemCommand
-    {
-        get;
-        private set;
     }
 }

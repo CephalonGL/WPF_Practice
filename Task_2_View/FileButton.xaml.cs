@@ -21,7 +21,7 @@ namespace Task_2_View;
 /// <summary>
 /// Interaction logic for customButton.xaml
 /// </summary>
-public partial class CustomButton : UserControl
+public partial class FileButton : UserControl
 {
     /// <summary>
     /// Store file name.
@@ -40,7 +40,7 @@ public partial class CustomButton : UserControl
     /// <summary>
     /// Create CustomButton item.
     /// </summary>
-    public CustomButton()
+    public FileButton()
     {
         InitializeComponent();
         fileNameLabel.Content = FileName;
@@ -50,7 +50,7 @@ public partial class CustomButton : UserControl
     /// Create CustomButton item.
     /// </summary>
     /// <param name="fileName">File name.</param>
-    public CustomButton(string fileName)
+    public FileButton(string fileName)
     {
         InitializeComponent();
         FileName = fileName;

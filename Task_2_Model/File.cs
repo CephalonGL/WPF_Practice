@@ -28,6 +28,11 @@ public class File : INotifyPropertyChanged
             OnPropertyChanged(nameof(Name));
         }
     }
+    
+    /// <summary>
+    /// Invoke when property changed.
+    /// </summary>
+    public event PropertyChangedEventHandler? PropertyChanged;
 
     /// <summary>
     /// Create file item.
@@ -46,9 +51,4 @@ public class File : INotifyPropertyChanged
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
-
-    /// <summary>
-    /// Invoke when property changed.
-    /// </summary>
-    public event PropertyChangedEventHandler? PropertyChanged;
 }

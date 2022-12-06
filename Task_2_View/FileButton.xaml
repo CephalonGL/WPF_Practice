@@ -1,4 +1,4 @@
-﻿<UserControl x:Name="customButton1" x:Class="Task_2_View.CustomButton"
+﻿<UserControl x:Name="fileButton" x:Class="Task_2_View.FileButton"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

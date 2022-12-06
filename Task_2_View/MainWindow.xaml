@@ -11,12 +11,12 @@
         <viewModel:ViewModel/>
     </Window.DataContext>
     <Grid>
-        <ListView x:Name="customButtonListView" 
+        <ListView x:Name="fileButtonListView" 
                   ItemsSource="{Binding Files}"
                   SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <local:CustomButton x:Name="CustomButton" FileName="{Binding Name}"/>
+                    <local:FileButton x:Name="fileButton" FileName="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
