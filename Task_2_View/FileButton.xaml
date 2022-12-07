@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:viewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
+             xmlns:fileButtonViewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
              xmlns:local="clr-namespace:Task_2_View"
              mc:Ignorable="d" Height="30" Width="Auto">
     <UserControl.DataContext>
-        <viewModel:MainViewModel/>
+        <fileButtonViewModel:FileButtonViewModel/>
     </UserControl.DataContext>
     <Grid Background="White">
         <Label x:Name ="fileNameLabel" 
-               Content="Empty file name" 
+               Content="{Binding File.Name}" 
                HorizontalAlignment="Left" 
                VerticalAlignment="Center" 
                Margin="10,0,40,0"/>
         <Button x:Name="deleteButton" 
-                Command="{Binding RemoveItemCommand}"
+                Command="{Binding RemoveCommand}"
                 HorizontalAlignment="Right" 
                 Margin="10,0,10,0" 
                 VerticalAlignment="Center" 

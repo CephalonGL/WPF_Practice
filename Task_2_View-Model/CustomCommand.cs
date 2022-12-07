@@ -10,7 +10,7 @@ namespace Task_2_View_Model;
 /// <summary>
 /// Custom command.
 /// </summary>
-internal class CustomCommand : ICommand
+public class CustomCommand : ICommand
 {
     /// <summary>
     /// Executable action.

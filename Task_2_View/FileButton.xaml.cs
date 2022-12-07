@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CommunityToolkit.Mvvm;
+using Task_2_View_Model;
 
 namespace Task_2_View;
 
@@ -24,36 +25,10 @@ namespace Task_2_View;
 public partial class FileButton : UserControl
 {
     /// <summary>
-    /// Store file name.
-    /// </summary>
-    private string _fileName = "Empty name";
-
-    /// <summary>
-    /// Store file name.
-    /// </summary>
-    public string FileName
-    {
-        get => _fileName;
-        set => _fileName = value;
-    }
-
-    /// <summary>
     /// Create CustomButton item.
     /// </summary>
     public FileButton()
     {
         InitializeComponent();
-        fileNameLabel.Content = FileName;
-    }
-
-    /// <summary>
-    /// Create CustomButton item.
-    /// </summary>
-    /// <param name="fileName">File name.</param>
-    public FileButton(string fileName)
-    {
-        InitializeComponent();
-        FileName = fileName;
-        fileNameLabel.Content = FileName;
     }
 }

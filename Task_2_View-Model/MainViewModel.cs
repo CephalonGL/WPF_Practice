@@ -17,15 +17,20 @@ namespace Task_2_View_Model;
 /// <summary>
 /// Main view-model
 /// </summary>
-public class ViewModel
+public class MainViewModel
 {
     /// <summary>
     /// Store all files.
     /// </summary>
-    public ObservableCollection<File> Files
+    private ObservableCollection<FileButtonViewModel> _fileButtons;
+
+    /// <summary>
+    /// Store all files.
+    /// </summary>
+    public ObservableCollection<FileButtonViewModel> FileButtons
     {
-        get => _files;
-        set => _files = value;
+        get => _fileButtons;
+        set => _fileButtons = value;
     }
 
     /// <summary>
@@ -45,18 +50,13 @@ public class ViewModel
         get;
         private set;
     }
-    
-    /// <summary>
-    /// Store all files.
-    /// </summary>
-    private ObservableCollection<File> _files;
 
     /// <summary>
     /// Creates ViewModel item.
     /// </summary>
-    public ViewModel()
+    public MainViewModel()
     {
-        Files = new();
+        FileButtons = new();
         AddItemCommand = new CustomCommand(AddItem);
         RemoveItemCommand = new CustomCommand(RemoveItem);
     }
@@ -64,20 +64,24 @@ public class ViewModel
     /// <summary>
     /// Add new file to collection.
     /// </summary>
-    /// <param name="obj">object</param>
-    public void AddItem(object obj)
+    /// <param name="parameter">object</param>
+    public void AddItem(object parameter)
     {
         OpenFileDialog fileDialog = new();
         fileDialog.ShowDialog();
-        Files.Add(new File(fileDialog?.FileName));
+        if (fileDialog is not null)
+        {
+            var newFile = new File(fileDialog.FileName);
+            FileButtons.Add(new FileButtonViewModel(newFile, RemoveItemCommand));
+        }
     }
 
     /// <summary>
     /// Delete file from collection.
     /// </summary>
-    /// <param name="obj"></param>
-    private void RemoveItem(object obj)
+    /// <param name="parameter">object</param>
+    private void RemoveItem(object parameter)
     {
-
+        //FileButtons.Remove();
     }
 }

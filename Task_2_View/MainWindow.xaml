@@ -4,19 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task_2_View"
-        xmlns:viewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
+        xmlns:mainViewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="500">
     <Window.DataContext>
-        <viewModel:MainViewModel/>
+        <mainViewModel:MainViewModel/>
     </Window.DataContext>
     <Grid>
         <ListView x:Name="fileButtonListView" 
-                  ItemsSource="{Binding Files}"
+                  ItemsSource="{Binding FileButtons}"
                   SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <local:FileButton x:Name="fileButton" FileName="{Binding Name}"/>
+                    <local:FileButton DataContext="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
