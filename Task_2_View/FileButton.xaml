@@ -1,0 +1,27 @@
+﻿<UserControl x:Name="fileButton" x:Class="Task_2_View.FileButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fileButtonViewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
+             xmlns:local="clr-namespace:Task_2_View"
+             mc:Ignorable="d" Height="30" Width="Auto">
+    <UserControl.DataContext>
+        <fileButtonViewModel:FileButtonViewModel/>
+    </UserControl.DataContext>
+    <Grid Background="White">
+        <Label x:Name ="fileNameLabel" 
+               Content="{Binding File.Name}" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Margin="10,0,40,0"/>
+        <Button x:Name="deleteButton" 
+                Command="{Binding RemoveCommand}"
+                HorizontalAlignment="Right" 
+                Margin="10,0,10,0" 
+                VerticalAlignment="Center" 
+                RenderTransformOrigin="0.471,0.384">
+            <Image Source="resources\icon-cross.png" Height="16" Width="16"></Image>
+        </Button>
+    </Grid>
+</UserControl>
