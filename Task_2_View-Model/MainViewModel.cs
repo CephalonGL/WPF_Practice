@@ -83,7 +83,10 @@ public class MainViewModel
     /// <param name="parameter">object</param>
     private void RemoveItem(object parameter)
     {
-
-        FileButtons.Remove(parameter as FileButtonViewModel);
+        if (parameter is not null
+            && parameter is FileButtonViewModel)
+        {
+            FileButtons.Remove(parameter as FileButtonViewModel);
+        }
     }
 }
