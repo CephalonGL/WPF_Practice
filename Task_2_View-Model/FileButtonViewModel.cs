@@ -25,11 +25,6 @@ public class FileButtonViewModel
         set => _removeCommand = value;
     }
 
-    public FileButtonViewModel()
-    {
-
-    }
-
     public FileButtonViewModel(File file, ICommand remove)
     {
         File = file;

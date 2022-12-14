@@ -72,7 +72,8 @@ public class MainViewModel
         if (fileDialog is not null)
         {
             var newFile = new File(fileDialog.FileName);
-            FileButtons.Add(new FileButtonViewModel(newFile, RemoveItemCommand));
+            FileButtons.Add(new FileButtonViewModel(
+                newFile, RemoveItemCommand));
         }
     }
 
@@ -82,6 +83,7 @@ public class MainViewModel
     /// <param name="parameter">object</param>
     private void RemoveItem(object parameter)
     {
-        //FileButtons.Remove();
+
+        FileButtons.Remove(parameter as FileButtonViewModel);
     }
 }

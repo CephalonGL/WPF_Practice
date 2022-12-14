@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:fileButtonViewModel ="clr-namespace:Task_2_View_Model;assembly=Task_2_View-Model"
              xmlns:local="clr-namespace:Task_2_View"
-             mc:Ignorable="d" Height="30" Width="Auto">
-    <UserControl.DataContext>
-        <fileButtonViewModel:FileButtonViewModel/>
-    </UserControl.DataContext>
+             xmlns:properties="clr-namespace:Task_2_View"
+             mc:Ignorable="d" 
+             Height="30" Width="Auto" 
+             d:DataContext="{d:DesignInstance fileButtonViewModel:FileButtonViewModel}">
+
     <Grid Background="White">
         <Label x:Name ="fileNameLabel" 
                Content="{Binding File.Name}" 
@@ -17,11 +18,15 @@
                Margin="10,0,40,0"/>
         <Button x:Name="deleteButton" 
                 Command="{Binding RemoveCommand}"
+                CommandParameter="{Binding}"
                 HorizontalAlignment="Right" 
                 Margin="10,0,10,0" 
                 VerticalAlignment="Center" 
                 RenderTransformOrigin="0.471,0.384">
-            <Image Source="resources\icon-cross.png" Height="16" Width="16"></Image>
+            <Image Height="16" 
+                   Width="16">
+
+            </Image>
         </Button>
     </Grid>
 </UserControl>
